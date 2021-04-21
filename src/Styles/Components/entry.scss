@@ -1,0 +1,54 @@
+@import "../elements/input.scss";
+@import "../Palette/palette";
+@import "../_mixins/container.scss";
+.entry_title{
+    font-size:24px;
+}
+.entry_desc{
+    margin-top:16px;
+    width:75%;
+}
+
+.entry_header{
+    @include flex(center,initial);
+    width:60%;
+    .entry_header_tools{
+        margin-left:24px;
+        font-size:18px;
+        color:$secondary_med; 
+        
+        display:flex;
+        .entry_header_tool{
+            &:not(:first-child) {
+                margin-left:10px;
+            }
+        }
+    }
+   
+}
+
+
+.entry_form{
+    text-align:left;
+    width:80%;
+   
+}
+.entry_form_footer{
+    text-align:right;
+}
+
+.entry_input{
+    border:2px solid $secondary_light;
+    background:none;
+    color:$secondary_med;
+}
+.entry_input_desc{
+    display:block;
+   width:100%;
+    margin-bottom:16px;
+    margin-top:24px;
+    resize:vertical;
+    background:#f0eded;
+    min-height:300px;
+    color:$primary_text;
+}

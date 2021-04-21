@@ -8,6 +8,11 @@
 }
 .button{
     @include buttonBase();
+    &.primary{
+        background:$primary_med;
+        color:$primary_text;
+        border:2px solid $secondary_med;
+    }
     &.secondary{
         background:$secondary_med;
         color:white;

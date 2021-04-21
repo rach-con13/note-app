@@ -1,0 +1,25 @@
+
+@mixin inputBase($padding:12px) {
+    border-style:none;
+    padding:$padding;
+    font-weight:bold;
+    border-radius:4px;
+    outline:none;
+    text-decoration:none;
+}
+
+.input,.textarea{
+    @include inputBase();
+    &.fullWidth {
+        width:100%;
+    }
+    &.lg{
+        width:80%;
+    }
+    &.md{
+        width:60%;
+    }
+    &.sm{
+        width:40%;
+    }
+}
