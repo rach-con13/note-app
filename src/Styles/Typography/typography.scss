@@ -1,0 +1,21 @@
+@import "../Palette/_palette";
+
+@mixin typographyBase($color,$weight,$size,$family:inherit,$align:left) {
+    font-weight:$weight;
+    font-size:$size;
+    color:$color;
+    text-align:$align;
+    font-family:$family;
+}
+
+.title{
+    @include typographyBase($secondary_med,bold,24px,"Roboto Mono"); 
+    
+}
+.subtitle{
+    @include typographyBase($primary_text,bold,16px,"Roboto Mono");
+}
+.paragraph {
+    @include typographyBase($primary_text,normal ,16px,"Montserrat" );
+    line-height:1.5em;
+}

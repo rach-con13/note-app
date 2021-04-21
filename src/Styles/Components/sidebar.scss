@@ -1,0 +1,30 @@
+@import "../_mixins/container.scss";
+@import "../Typography/typography.scss";
+@import "../elements/button.scss";
+@import "../Palette/palette";
+.sidebar{
+   @include containerBase(100%,16px,0px); 
+   text-align:left;
+}
+
+
+
+.sidebar_menu{
+    margin:24px 0px;
+    font-family:"Montserrat";
+    font-weight:600;
+    color:$secondary_med;
+}
+.sidebar_menu_item{
+    @include flex(baseline,space-between);
+    &:not(:first-child) {
+        margin-top:8px;
+    }
+  
+    
+}
+
+.create_entry_btn{
+    width:80%;
+  
+}

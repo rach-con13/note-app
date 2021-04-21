@@ -1,0 +1,15 @@
+@import "../_mixins/container.scss";
+
+.mainSection {
+    @include containerBase(80%,24px,0px,center);
+    @include grid(200px 1fr,0,8px,vertical);
+    
+}
+
+.content_title{
+    font-size:24px;
+}
+.content_desc{
+    margin-top:16px;
+    width:75%;
+}

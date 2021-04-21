@@ -1,0 +1,11 @@
+@import "../Palette/palette";
+@import "../_mixins/container.scss";
+
+.header{
+    @include containerBase(80%,24px,40px,center);
+    @include flex(baseline,'initial');
+    text-align:left;
+}
+.headerCredits {
+    margin-left:10px;
+}

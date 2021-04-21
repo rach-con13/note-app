@@ -1,0 +1,15 @@
+@import "../Palette/palette";
+
+@mixin buttonBase($padding:12px) {
+    border-style:none;
+    padding:$padding;
+    font-weight:bold;
+    border-radius:4px;
+}
+.button{
+    @include buttonBase();
+    &.secondary{
+        background:$secondary_med;
+        color:white;
+    }
+}

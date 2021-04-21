@@ -1,0 +1,26 @@
+@mixin containerBase($width,$padding,$margin,$center:false) {
+    width:$width;
+    padding:$padding;
+    margin:$margin;
+    @if $center {
+        margin:0 auto;
+        margin-top:$margin;
+    }
+}
+
+@mixin flex($align,$justify) {
+    display:flex;
+
+    align-items:$align;
+    justify-content:$justify;
+}
+
+@mixin grid($cols,$rows,$gap,$vertical:true) {
+    display:grid;
+    grid-gap:$gap;
+    @if $vertical {
+        grid-template-columns: $cols;
+    } @else {
+        grid-template-rows:$rows;
+    }
+}
