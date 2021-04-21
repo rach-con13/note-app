@@ -27,13 +27,7 @@ export default function Entry({entries,setEntry}) {
         setEditable(false);
         
     }
-    let editEntryDesc = (e) => {
-
-    }
-  
-
-
-
+ 
    return (
     <>
     
@@ -46,7 +40,7 @@ export default function Entry({entries,setEntry}) {
            
              <div className="entry_header_tools">
                  <p className="entry_header_tool">
-                    <i onClick={() => setEditable(true)} className="far fa-edit"></i>
+                    <i onClick={() => setEditable(true)} aria-label="edit" className="far fa-edit"></i>
                  </p>
                  <p  className="entry_header_tool">
                     <i onClick={deleteEntry} className="far fa-trash-alt"></i>
