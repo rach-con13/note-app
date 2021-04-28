@@ -3,15 +3,15 @@ import './App.css';
 import "./Styles/Typography/typography.scss";
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main';
-import {BrowserRouter as Router} from 'react-router-dom';
+import {HashRouter} from 'react-router-dom';
 function App() {
   return (
-    <Router>
+    <HashRouter>
       <div className="App">
         <Header />
         <Main />
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 

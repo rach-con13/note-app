@@ -7,11 +7,12 @@
     border-radius:4px;
 }
 .button{
-    @include buttonBase();
+    @include buttonBase(12px 24px);
     &.primary{
         background:$primary_med;
-        color:$primary_text;
-        border:2px solid $secondary_med;
+        color:$secondary_med;
+        font-weight:bold;
+    
     }
     &.secondary{
         background:$secondary_med;

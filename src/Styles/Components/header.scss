@@ -5,6 +5,10 @@
     @include containerBase(80%,24px,40px,center);
     @include flex(baseline,'initial');
     text-align:left;
+    @media only screen and (max-width:1240px) {
+        @include containerBase(90%,24px,0px,center);
+    
+    }
 }
 .headerCredits {
     margin-left:24px;

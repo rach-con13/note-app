@@ -2,11 +2,14 @@ import React, { useEffect, useState } from 'react'
 import Sidebar from '../Sidebar/Sidebar'
 import "../../Styles/Components/main.scss";
 import Entry from '../Entry/entry';
-import { Route } from 'react-router';
+import { Route, useParams } from 'react-router';
 import EntryForm from '../EntryForm/entryForm';
 import {v4 as uuidv4} from "uuid";
 export default function Main(props) {
     let [entries,setEntry] = useState([]);
+    let [selectedEntry,setSelected] = useState(); // entry ID
+
+  
 
     useEffect(() => {
         console.log('editted form');
@@ -24,19 +27,29 @@ export default function Main(props) {
         form.reset();
     }
 
+    let smallScreen = window.matchMedia("(max-width:800px)");
+    
+  
+
     return (
-        <main className="mainSection">
-            <Sidebar  entries={entries} />
-            <div className="mainContent">
-               
-                <Route exact path='/'>
-                    <EntryForm  onSubmit={submitEntryForm}/>
-                </Route>
-                <Route exact path='/entry/:id'>
-                    <Entry entries={entries} setEntry={setEntry}  />
-                </Route>
-            </div>
-          
-        </main>
+        <>
+
+        { smallScreen.matches ? console.log(smallScreen): 
+            
+            <main className="mainSection">
+                <Sidebar  entries={entries} />
+                <div className="mainContent">
+                
+                    <Route exact path='/'>
+                        <EntryForm  onSubmit={submitEntryForm}/>
+                    </Route>
+                    <Route exact path='/entry/:id'>
+                        <Entry entries={entries} setEntry={setEntry}  />
+                    </Route>
+                </div>
+            
+            </main>
+        }
+        </>
     )
 }

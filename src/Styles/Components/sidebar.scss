@@ -5,6 +5,16 @@
 .sidebar{
    @include containerBase(100%,16px,0px); 
    text-align:left;
+
+// @media only screen and (max-width:840px) {
+//     position:fixed;
+//     width:30px;
+//     left:0%;
+//     height:100%;
+//     background:#ededed;
+//   }
+  
+  
 }
 
 
@@ -13,15 +23,25 @@
     margin:24px 0px;
     font-family:"Montserrat";
     font-weight:600;
-    color:$secondary_med;
+    color:#9e9b9b;
 }
 .sidebar_menu_item{
     @include flex(baseline,space-between);
     &:not(:first-child) {
         margin-top:8px;
     }
+    &:hover{
+        color:$secondary_med;
+    }
+   
   
     
+}
+.selected{
+    color:$secondary_med;
+    background:$primary_med;
+    padding:8px;
+    border-radius:4px;
 }
 
 .create_entry_btn{
