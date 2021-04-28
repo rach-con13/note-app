@@ -1,5 +1,7 @@
 # Note App
 
+Live at : https://note-entry.netlify.app/#/
+
 **Description**
 ---
 This is a simple note-taking application that allows users to create,read,update and delete
