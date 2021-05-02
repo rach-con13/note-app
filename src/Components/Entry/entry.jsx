@@ -5,11 +5,18 @@ import EditInputForm from '../EntryForm/EditInputForm';
 import EntryForm from '../EntryForm/entryForm';
 export default function Entry({entries,setEntry}) {
     const [isEditable,setEditable] = useState(false);
+    const [entry,setCurrentEntry] = useState(null);
+
     const params = useParams();
     const history = useHistory();
-    
+
+    useEffect(() => {
+        getEntry();
+    }, [])
+
     const getEntry = () => {
-        const current = entries.filter(entry => entry.id == params.id);
+        const current = entries.filter(entry => entry.id === params.id);
+        setCurrentEntry(current[0]);
         return current[0];    
     }
 
@@ -24,7 +31,7 @@ export default function Entry({entries,setEntry}) {
             if(title !== "") {
                 entry.title = title;
             }
-            if(desc != "") {
+            if(desc !== "") {
                 entry.desc = desc;
             }
             console.log(entry);
@@ -34,6 +41,8 @@ export default function Entry({entries,setEntry}) {
         }
     }
 
+
+
     const editEntryTitle = (e) => {
         e.preventDefault();
         const form = e.currentTarget;
@@ -41,7 +50,6 @@ export default function Entry({entries,setEntry}) {
         const desc = form["entry_desc"].value;
         
         const update_entries = entries.filter(entry => updateEntry(entry,title,desc));
-        console.log(update_entries);
         setEntry(update_entries);
         setEditable(false);
         
@@ -54,7 +62,7 @@ export default function Entry({entries,setEntry}) {
         
         <div className="entry_header">
            
-             <h4  className="subtitle entry_title">{getEntry() && getEntry().title}</h4> 
+             <h4 data-testid='entry_title' className="subtitle entry_title">{entry ? entry.title : ''}</h4> 
              
            
              <div className="entry_header_tools">
@@ -67,7 +75,7 @@ export default function Entry({entries,setEntry}) {
              </div>
         </div>
         <p className="entry_desc paragraph">
-            {getEntry() && getEntry().desc}
+            {entry && entry.desc}
         </p>
             
     </div>
