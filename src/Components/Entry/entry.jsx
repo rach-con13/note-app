@@ -11,11 +11,15 @@ export default function Entry({entries,setEntry}) {
     const history = useHistory();
 
     useEffect(() => {
+       
         getEntry();
     }, [])
 
     const getEntry = () => {
+  
+        console.log(entries);
         const current = entries.filter(entry => entry.id === params.id);
+        console.log(current);
         setCurrentEntry(current[0]);
         return current[0];    
     }
@@ -23,6 +27,7 @@ export default function Entry({entries,setEntry}) {
     const deleteEntry = () => {
         const delete_entries = entries.filter(entry => entry.id !== params.id);
         setEntry(delete_entries);
+        console.log(delete_entries);
         history.push("/");  
     }
 
@@ -67,10 +72,12 @@ export default function Entry({entries,setEntry}) {
            
              <div className="entry_header_tools">
                  <p className="entry_header_tool">
-                    <i onClick={() => setEditable(true)} aria-label="edit" className="far fa-edit"></i>
+                    <i onClick={() => setEditable(true)} aria-label="edit" data-testid='update' className="far fa-edit"></i>
                  </p>
                  <p  className="entry_header_tool">
-                    <i aria-label="delete" data-testid="delete" onClick={deleteEntry} className="far fa-trash-alt"></i>
+                    <button data-testid='delete' onClick={deleteEntry}>
+                         <i aria-label="delete"   className="far fa-trash-alt"></i>
+                   </button>
                  </p>
              </div>
         </div>
